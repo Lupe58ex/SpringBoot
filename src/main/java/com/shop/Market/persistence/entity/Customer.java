@@ -13,11 +13,11 @@ public class Customer {
     @Column(name = "nombre")
     private String name;
 
-    @Column(name = "apellido")
+    @Column(name = "apellidos")
     private String lastName;
 
     @Column(name = "celular")
-    private Integer cellphone;
+    private Long cellphone;
 
     @Column(name = "direccion")
     private String address;
@@ -38,15 +38,6 @@ public class Customer {
                 ", address='" + address + '\'' +
                 ", email='" + email + '\'' +
                 '}';
-    }
-
-    public Customer(String id, String name, String lastName, Integer cellphone, String address, String email) {
-        this.id = id;
-        this.name = name;
-        this.lastName = lastName;
-        this.cellphone = cellphone;
-        this.address = address;
-        this.email = email;
     }
 
     public String getId() {
@@ -73,11 +64,11 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public Integer getCellphone() {
+    public Long getCellphone() {
         return cellphone;
     }
 
-    public void setCellphone(Integer cellphone) {
+    public void setCellphone(Long cellphone) {
         this.cellphone = cellphone;
     }
 

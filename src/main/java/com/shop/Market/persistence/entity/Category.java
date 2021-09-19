@@ -9,10 +9,12 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_categoria")
-    private String id;
+    private Integer id;
 
     @Column(name = "descripcion")
     private String description;
+    @Column(name = "estado")
+    private Boolean state;
 
     @OneToMany(mappedBy = "category")
     private List<Product> products;
@@ -25,16 +27,19 @@ public class Category {
                 '}';
     }
 
-    public Category(String id, String description) {
-        this.id = id;
-        this.description = description;
+    public List<Product> getProducts() {
+        return products;
     }
 
-    public String getId() {
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -44,5 +49,13 @@ public class Category {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Boolean getState() {
+        return state;
+    }
+
+    public void setState(Boolean state) {
+        this.state = state;
     }
 }

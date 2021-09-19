@@ -4,20 +4,21 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
+//it must has the same name of id of the others entities relation
 @Embeddable
 public class PurchaseProductPK implements Serializable {
     @Column(name = "id_compra")
-    private Integer idPurchase;
+    private Integer id;
 
     @Column(name = "id_producto")
     private Integer idProduct;
 
     public Integer getIdPurchase() {
-        return idPurchase;
+        return id;
     }
 
     public void setIdPurchase(Integer idPurchase) {
-        this.idPurchase = idPurchase;
+        this.id = idPurchase;
     }
 
     public Integer getIdProduct() {

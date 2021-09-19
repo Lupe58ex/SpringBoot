@@ -18,7 +18,7 @@ public class Product {
     @Column(name = "id_categoria")
     private Integer idCategory;
 
-    @Column(name = "caodigo_barras")
+    @Column(name = "codigo_barras")
     private String barCode;
 
     @Column(name = "precio_venta")
@@ -37,6 +37,8 @@ public class Product {
     @OneToMany(mappedBy = "purchase")
     private List<PurchaseProduct> purchases;
 
+
+
     @Override
     public String toString() {
         return "Product{" +
@@ -45,19 +47,9 @@ public class Product {
                 ", idCategory=" + idCategory +
                 ", barCode='" + barCode + '\'' +
                 ", sellPrice=" + sellPrice +
-                ", cantidadStock=" + cantidadStock +
+                ", stock=" + stock +
                 ", state=" + state +
                 '}';
-    }
-
-    public Product(Integer idProduct, String name, Integer idCategory, String barCode, Double sellPrice, Integer cantidadStock, Boolean state) {
-        this.idProduct = idProduct;
-        this.name = name;
-        this.idCategory = idCategory;
-        this.barCode = barCode;
-        this.sellPrice = sellPrice;
-        this.cantidadStock = cantidadStock;
-        this.state = state;
     }
 
     public Integer getIdProduct() {
@@ -100,12 +92,12 @@ public class Product {
         this.sellPrice = sellPrice;
     }
 
-    public Integer getCantidadStock() {
-        return cantidadStock;
+    public Integer getStock() {
+        return stock;
     }
 
-    public void setCantidadStock(Integer cantidadStock) {
-        this.cantidadStock = cantidadStock;
+    public void setStock(Integer stock) {
+        this.stock = stock;
     }
 
     public Boolean getState() {
@@ -115,4 +107,13 @@ public class Product {
     public void setState(Boolean state) {
         this.state = state;
     }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
 }
